@@ -34,7 +34,6 @@ export default {
     width: 100px;
     height: 100px;
     border-radius: 0 !important;
-
   }
 
   h4 {

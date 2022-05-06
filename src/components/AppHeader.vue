@@ -1,7 +1,7 @@
 <template>
   <div>
-    <header class="d-flex align-items-center ">
-      <img src="../assets/logo.png" alt="Logo" class="mx-2">
+    <header class="d-flex align-items-center">
+      <img src="../assets/logo.png" alt="Logo" class="mx-2" />
     </header>
   </div>
 </template>
@@ -18,7 +18,7 @@ header {
   height: 50px;
   width: 100%;
   background-color: $bg-header;
-  img{
+  img {
     width: 40px;
     height: 40px;
   }

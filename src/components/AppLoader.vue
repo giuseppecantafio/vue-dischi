@@ -1,13 +1,22 @@
 <template>
   <div>
-      <div class="lds-roller middle"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+    <div class="lds-roller middle">
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
   </div>
 </template>
 
 <script>
 export default {
-name: 'AppLoader'
-}
+  name: "AppLoader",
+};
 </script>
 
 <style>
