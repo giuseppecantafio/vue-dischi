@@ -33,11 +33,11 @@ export default {
       .get("https://flynn.boolean.careers/exercises/api/array/music")
       .then((res) => {
         this.cards = res.data.response;
-        console.log(this.cards);
-        this.loading = false;
       })
       .catch((error) => {
         console.log(error);
+      })
+      .finally(() => {
         this.loading = false;
       });
   },
