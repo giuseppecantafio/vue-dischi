@@ -1,0 +1,15 @@
+/* importo bootstrap da node-modules */
+@import "~bootstrap/scss/bootstrap.scss";
+
+/* importo i font necessari, precedentemente installati */
+@import "~@fontsource/akaya-telivigala/index.css";
+@import "~@fontsource/akaya-telivigala/400.css";
+
+/* importo le variabili globali */
+@import "./var.scss";
+
+body { 
+    font-family: $main-font;
+    height: 100vh;
+    width: 100%;
+ }
