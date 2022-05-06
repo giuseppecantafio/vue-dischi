@@ -19,8 +19,8 @@ header {
   width: 100%;
   background-color: $bg-header;
   img{
-    width: 30px;
-    height: 30px;
+    width: 40px;
+    height: 40px;
   }
 }
 </style>

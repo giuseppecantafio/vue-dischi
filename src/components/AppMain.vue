@@ -8,6 +8,7 @@
             </div>
           </div>
         </div>
+        <app-loader v-if="loading" />
     </div>
   </main>
 </template>
@@ -15,24 +16,28 @@
 <script>
 import AppCards from "./AppCards.vue";
 import axios from "axios";
+import AppLoader from './AppLoader.vue';
 
 export default {
-  components: { AppCards },
+  components: { AppCards, AppLoader },
   name: "AppMain",
   data() {
     return {
       cards: [],
+      loading: true
     };
   },
   mounted() {
-    axios
-      .get("https://flynn.boolean.careers/exercises/api/array/music")
+      this.loading = true;
+    axios.get("https://flynn.boolean.careers/exercises/api/array/music")
       .then((res) => {
         this.cards = res.data.response;
         console.log(this.cards);
+        this.loading = false;
       })
       .catch((error) => {
         console.log(error);
+        this.loading = false;
       });
   },
 };
