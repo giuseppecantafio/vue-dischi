@@ -58,7 +58,7 @@ export default {
   },
   computed: {
     filteredSongs() {
-      if (this.searchText === "all") {
+      if (this.searchText === "") {
         return this.cards;
       }
       return this.cards.filter((element) => {

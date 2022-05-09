@@ -1,7 +1,7 @@
 <template>
   <div class="pb-1">
     <select class="form-select" v-model="inputText" @change="getChanged">
-      <option  selected value="all">Tutto</option>
+      <option  selected value="">Tutto</option>
       <option :value="item" v-for="(item, index) in genere" :key="index">
         {{ item }}
       </option>
