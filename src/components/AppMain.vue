@@ -2,8 +2,9 @@
   <main>
     <div class="wrapper">
       <div class="container pt-3">
+        <app-searcher @performChange="mySearch($event)" :genere="genre" />
         <div class="row row-cols-5">
-          <div class="col" v-for="card in cards" :key="card.author">
+          <div class="col" v-for="card in filteredSongs" :key="card.author">
             <app-cards :item="card" />
           </div>
         </div>
@@ -17,14 +18,17 @@
 import AppCards from "./AppCards.vue";
 import axios from "axios";
 import AppLoader from "./AppLoader.vue";
+import AppSearcher from "./AppSearcher.vue";
 
 export default {
-  components: { AppCards, AppLoader },
+  components: { AppCards, AppLoader, AppSearcher },
   name: "AppMain",
   data() {
     return {
       cards: [],
+      genre: [],
       loading: true,
+      searchText: "",
     };
   },
   mounted() {
@@ -33,13 +37,34 @@ export default {
       .get("https://flynn.boolean.careers/exercises/api/array/music")
       .then((res) => {
         this.cards = res.data.response;
+        this.cards.forEach((card) => {
+          if (!this.genre.includes(card.genre)) {
+            this.genre.push(card.genre);
+          }
+        });
       })
       .catch((error) => {
         console.log(error);
       })
       .finally(() => {
         this.loading = false;
+        console.log(this.genre);
       });
+  },
+  methods: {
+    mySearch(text) {
+      this.searchText = text;
+    },
+  },
+  computed: {
+    filteredSongs() {
+      if (this.searchText === "all") {
+        return this.cards;
+      }
+      return this.cards.filter((element) => {
+        return element.genre === this.searchText;
+      });
+    },
   },
 };
 </script>

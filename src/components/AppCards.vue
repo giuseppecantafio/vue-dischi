@@ -16,7 +16,7 @@
 export default {
   name: "AppCards",
   props: {
-    item: Array,
+    item: Object,
   },
 };
 </script>
@@ -24,7 +24,7 @@ export default {
 <style lang="scss" scoped>
 @import "@/style/general.scss";
 .card {
-  height: 300px;
+  height: 270px;
   width: 150px;
   display: block !important;
   border-radius: 0 !important;
@@ -39,9 +39,11 @@ export default {
   h4 {
     color: $primary;
     text-transform: uppercase;
+    font-size: 1.2rem;
   }
   p {
     color: $secondary;
+    font-size: 0.8rem;
   }
 }
 </style>
